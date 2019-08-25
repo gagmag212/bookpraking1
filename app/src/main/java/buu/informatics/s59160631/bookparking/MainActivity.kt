@@ -58,19 +58,19 @@ class MainActivity : AppCompatActivity() {
                     praking[0].number = findViewById<TextView>(R.id.number).text.toString()
                     praking[0].brand = findViewById<TextView>(R.id.brand).text.toString()
                     praking[0].name = findViewById<TextView>(R.id.name).text.toString()
-                    prak1.setText("ไม่ว่าง")
+                    prak1.setText( praking[0].number)
                 }
                 R.id.prak2.toString() -> {
                     praking[1].number = findViewById<TextView>(R.id.number).text.toString()
                     praking[1].brand = findViewById<TextView>(R.id.brand).text.toString()
                     praking[1].name = findViewById<TextView>(R.id.name).text.toString()
-                    prak2.setText("ไม่ว่าง")
+                    prak2.setText( praking[1].number)
                 }
                 R.id.prak3.toString() -> {
                     praking[2].number = findViewById<TextView>(R.id.number).text.toString()
                     praking[2].brand = findViewById<TextView>(R.id.brand).text.toString()
                     praking[2].name = findViewById<TextView>(R.id.name).text.toString()
-                    prak2.setText("ไม่ว่าง")
+                    prak2.setText( praking[2].number)
                 }
             }
             Toast.makeText(this , "บันทึก" , Toast.LENGTH_SHORT).show()
@@ -88,16 +88,19 @@ class MainActivity : AppCompatActivity() {
                 praking[0].number = ""
                 praking[0].brand = ""
                 praking[0].name = ""
+                prak1.setText("")
             }
             R.id.prak2.toString() -> {
                 praking[1].number = ""
                 praking[1].brand = ""
                 praking[1].name = ""
+                prak2.setText("ว่าง")
             }
             R.id.prak3.toString() -> {
                 praking[2].number = ""
                 praking[2].brand = ""
                 praking[2].name = ""
+                prak3.setText("ว่าง")
             }
 
         }
