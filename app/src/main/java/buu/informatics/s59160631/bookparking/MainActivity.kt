@@ -15,6 +15,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        prak1.setText("ว่าง")
+        prak2.setText("ว่าง")
+        prak3.setText("ว่าง")
         var set = listOf<Button>(findViewById(R.id.prak1), findViewById(R.id.prak2),findViewById(R.id.prak3))
         for (i in set){
             i.setOnClickListener{
@@ -22,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         findViewById<Button>(R.id.update).setOnClickListener{inputCar()}
-        //findViewById<Button>(R.id.delete).setOnClickListener{deleteCar()}
+        findViewById<Button>(R.id.delete).setOnClickListener{deleteCar()}
 
     }
     fun setCar(view: Button){
@@ -55,16 +58,19 @@ class MainActivity : AppCompatActivity() {
                     praking[0].number = findViewById<TextView>(R.id.number).text.toString()
                     praking[0].brand = findViewById<TextView>(R.id.brand).text.toString()
                     praking[0].name = findViewById<TextView>(R.id.name).text.toString()
+                    prak1.setText("ไม่ว่าง")
                 }
                 R.id.prak2.toString() -> {
                     praking[1].number = findViewById<TextView>(R.id.number).text.toString()
                     praking[1].brand = findViewById<TextView>(R.id.brand).text.toString()
                     praking[1].name = findViewById<TextView>(R.id.name).text.toString()
+                    prak2.setText("ไม่ว่าง")
                 }
                 R.id.prak3.toString() -> {
                     praking[2].number = findViewById<TextView>(R.id.number).text.toString()
                     praking[2].brand = findViewById<TextView>(R.id.brand).text.toString()
                     praking[2].name = findViewById<TextView>(R.id.name).text.toString()
+                    prak2.setText("ไม่ว่าง")
                 }
             }
             Toast.makeText(this , "บันทึก" , Toast.LENGTH_SHORT).show()
@@ -73,6 +79,32 @@ class MainActivity : AppCompatActivity() {
         }else{
             Toast.makeText(this , "เลือกที่จอด" , Toast.LENGTH_SHORT).show()
         }
+
+    }
+    fun deleteCar() {
+        when (book) {
+
+            R.id.prak1.toString() -> {
+                praking[0].number = ""
+                praking[0].brand = ""
+                praking[0].name = ""
+            }
+            R.id.prak2.toString() -> {
+                praking[1].number = ""
+                praking[1].brand = ""
+                praking[1].name = ""
+            }
+            R.id.prak3.toString() -> {
+                praking[2].number = ""
+                praking[2].brand = ""
+                praking[2].name = ""
+            }
+
+        }
+        number.setText("")
+        brand.setText("")
+        name.setText("")
+
 
     }
 
